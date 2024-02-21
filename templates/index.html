@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">BAYKAR BAYRAKTAR</h1>
+                        <h2 class="home__subtitle">Göklerde<br>750 Bin Saat</h2>
+                        <a href="https://baykartech.com/tr/" class="button">BAYKAR</a>
+                    </div>
+    
+                    <img src="{% static 'assets/img/baykar_bayraktar_tb2.png' %}"  alt="" class="home__img">
+                </div>
+            </section>
+            
+            <!--========== ABOUT ==========-->
+            <section class="about section bd-container" id="about">
+                <div class="about__container  bd-grid">
+                    <div class="about__data">
+                        <span class="section-subtitle about__initial">Biz Kimiz ?</span>
+                        <h2 class="section-title about__initial">Teknolojiye şekil veren <br> Aydın bir topluluk</h2>
+                        <p class="about__description">Baykar, Türkiye merkezli bir makine imalat ve savunma şirketidir. Baykar Makina ismiyle 1986 yılında Özdemir Bayraktar tarafından otomotiv sanayine yerlileştirmeye tabi hassas motor, pompa ve dişli kutusu parçalarının imalatı konusunda hizmet etme amacıyla kurulmuştur.</p>
+                        <a href="https://baykartech.com/tr/tarihce/" class="button">Daha Fazla</a>
+                    </div>
+
+                    <img src="{% static 'assets/img/hakkımızda.jpg' %}" alt="" class="about__img">
+                </div>
+            </section>
+
+            <!--========== SERVICES ==========-->
+            <section class="services section bd-container" id="services">
+                <span class="section-subtitle">Hizmetler</span>
+                <h2 class="section-title">Milli Teknoloji Hamlesinin Öncüsü</h2>
+
+                <div class="services__container  bd-grid">
+                    <div class="services__content">
+                    
+                        <h3 class="services__title">Görüntü Aktarma Merkezi</h3>
+                        <p class="services__description">Görüntü Aktarma Merkezi (GAM), hava ve kara araçlarından alınan anlık canlı görüntülerin aynı anda ve birden fazla kullanıcı tarafından izin dahilinde görüntülenmesi için tasarlanmıştır.
+                        </p>
+                    </div>
+
+                    <div class="services__content">
+                        
+                            <defs>
+                            <clipPath id="clip0">
+                            <rect width="64" height="64" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        
+                        <h3 class="services__title">Faydalı Yük Sistemleri</h3>
+                        <p class="services__description">CATS, İnsansız Hava Araçları (İHA), helikopterler ve uçaklar dahil sabit kanatlı veya döner kanatlı hava platformları için geliştirilmiş olan, yüksek performanslı bir elektro-optik keşif, gözetleme ve hedefleme sistemidir.
+
+                        </p>
+                    </div>
+
+                    <div class="services__content">
+                                <defs>
+                                <clipPath id="clip0">
+                                <rect width="64" height="64" fill="white"/>
+                                </clipPath>
+                                </defs>
+                        </svg>
+                        <h3 class="services__title">Simülatör Sistemi</h3>
+                        <p class="services__description">Simülasyon sistemleri Ar-Ge çalışmalarının önemli bir parçasıdır ve iş gücü ile zaman tasarrufu sağlanması için elzem bir altyapıdır.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--========== MENU ==========-->
+            <section class="menu section bd-container" id="menu">
+                <span class="section-subtitle">Ürünler</span>
+                <h2 class="section-title">İNSANSIZ HAVA ARAÇLARI</h2>
+
+                <div class="menu__container bd-grid">
+
+                    {% for item in samples %}
+
+                    <div class="menu__content"  >
+                        {% if item.image %}
+                        <img src="{{item.image.url}}" alt="" class="menu__img">
+                        {% else %}
+                        resim yok
+                        {% endif %}
+                        <h3 class="menu__name">{{item.marka}} - {{item.model}}</h3>
+                        <span class="menu__detail">{{item.agirlik}} kg</span>
+                        <span class="menu__preci">KATEGORİ {{item.kategori}}</span>
+                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+                    {% endfor %}
+                </div>
+                 
+                    <div class="menu__container bd-grid">
+                        {% for item in samples %}                           
+                                <div class="wrapper wrapper-content animated fadeInRight">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="ibox">
+                                                <div class="ibox-content product-box">
+                                                    {% if item.image %}
+                                                        <img src="{{item.image.url}}" alt="" class="">
+                                                    {% else %}
+                                                        resim yok
+                                                    {% endif %}
+                                                    <div class="product-desc">
+                                                        <span class="product-price">{{item.model}}</span>                      
+                                                        <small class="text-muted">{{item.kategori}}</small>
+                                                        <br>
+                                                        <a href="#" class="product-name">{{item.marka}} - {{item.model}}</a>
+                                                        <div class="small m-t-xs">
+                                                            İHA'ların en önemli ve olmazsa olmaz bileşeni, yer tabanlı bir kontrolör ile uçak arasında bir iletişim sistemdir.
+                                                        </div>
+                                                        <div class="m-t text-right">
+                                                            <a href="#" class="btn btn-xs btn-outline btn-primary">Detay <i class="fa fa-long-arrow-right"></i> </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                           
+                        {% endfor %}
+                    </div>
+                    
+            </section>
+
+            <!--========== CONTACT US ==========-->
+            <section class="contact section bd-container" id="contact">
+                <div class="contact__container bd-grid">
+                    <div class="contact__data">
+                        <span class="section-subtitle contact__initial">İletişim</span>
+                        <h2 class="section-title contact__initial">İletişim Bilgileri</h2>
+                        <p class="contact__description">Baykar Milli S/İHA Sistemleri Ar-Ge ve Üretim Tesisi</p>
+                        <br>
+                        <p class="contact__description">+90 (212) 867 09 00 (08:00-18:00)</p>
+                    </div>
+
+                    <div class="contact__button">
+                        <a href="https://baykartech.com/tr/contact/" class="button">BİZE ULAŞIN</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    {% endblock %}
