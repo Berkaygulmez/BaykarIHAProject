@@ -7,9 +7,9 @@
 <h1>Django arayüzünde ki CRUD işlemleri görüntüleri </h1>
 
 ![django yönetim](https://github.com/Berkaygulmez/BaykarIHAProject/assets/126198389/238f378e-6262-4f4e-88ba-9a1b7d04c6dd)
+![listeler](https://github.com/Berkaygulmez/BaykarIHAProject/assets/126198389/cd14c331-3a4b-404d-9b1f-e2be6136ae90)
 ![crud](https://github.com/Berkaygulmez/BaykarIHAProject/assets/126198389/c447e28f-1174-441a-ab95-b026432218c6)
 ![ürün listeleme](https://github.com/Berkaygulmez/BaykarIHAProject/assets/126198389/d0b9558d-cab3-4e9b-b9f5-9ee85e002fd5)
-![listeler](https://github.com/Berkaygulmez/BaykarIHAProject/assets/126198389/cd14c331-3a4b-404d-9b1f-e2be6136ae90)
 
 <h1> PostgreSql Railway teknolojisiyle birleştirildi </h1>
 
